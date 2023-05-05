@@ -30,6 +30,9 @@ import { ConsultationComponent } from './back/component/consultation/consultatio
 import { AppRoutingModule } from 'app/app.routing';
 import { ComponentsModule } from 'app/front/components/components.module';
 import { ExamplesModule } from 'app/front/examples/examples.module';
+import { CreditComponent } from './back/component/credit/credit.component';
+import { CreditDemandComponent } from './back/component/credit-demand/credit-demand.component';
+import { EventComponent } from './back/component/event/event.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -47,6 +50,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SidebarComponent,
     NavbarComponent,
     ConsultationComponent,
+    CreditComponent,
+    CreditDemandComponent,
+    EventComponent,
+
   ],
   imports: [
     CommonModule,

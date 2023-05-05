@@ -9,6 +9,9 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { TableComponent } from './table/table.component';
 import { ConsultationComponent } from './consultation/consultation.component';
+import {EventComponent} from "./event/event.component";
+import {CreditDemandComponent} from "./credit-demand/credit-demand.component";
+import {CreditComponent} from "./credit/credit.component";
 
 
 export const ComponentsRoutes: Routes = [
@@ -51,6 +54,19 @@ export const ComponentsRoutes: Routes = [
 				path: 'consultation',
 				component: ConsultationComponent
 			},
+			{
+				path: 'event',
+				component: EventComponent
+			},
+			{
+				path: 'credit',
+				component: CreditComponent
+			},
+			{
+				path: 'creditDemand',
+				component: CreditDemandComponent
+			},
+
 		]
 	}
 ];

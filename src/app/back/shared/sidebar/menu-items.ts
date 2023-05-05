@@ -18,6 +18,30 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+    path: '/component/event',
+    title: 'Event',
+    icon: 'bi bi-calendar-month-fill',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/creditDemand',
+    title: 'Credit Demands',
+    icon: 'bi bi-cash-coin',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/component/credit',
+    title: 'Credits',
+    icon: 'bi bi-cash-coin',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
     path: '/component/alert',
     title: 'Alert',
     icon: 'bi bi-bell',

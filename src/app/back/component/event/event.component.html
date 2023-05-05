@@ -1,0 +1,176 @@
+
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-body border-top" style="height: 90px;">
+                <ng-container *ngFor="let alert of alerts">
+                    <ngb-alert [type]="alert.type" [dismissible]="false">
+                        <button type="button" name="button" class="close" (click)="closeAlert(alert)">
+                          <span aria-hidden="true">
+                            <i class="now-ui-icons ui-1_simple-remove"></i>
+                          </span>
+                        </button>
+                        <div class="message">
+                            <ng-container *ngIf="alert.icon">
+                                <div class="alert-icon">
+                                    <i class="now-ui-icons {{alert.icon}}"></i>
+                                </div>
+                            </ng-container>
+                            <strong>{{alert.strong}} </strong>{{ alert.message }}
+                        </div>
+                    </ngb-alert>
+                </ng-container>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="card-body border-top">
+                <h4 class="card-title">Event Board</h4>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 20px;">
+
+
+                <div class="container mt-5">
+                    <h2>Add Event</h2>
+                    <form #addForm="ngForm" (ngSubmit)="addEvent(addForm.value)">
+                        <div class="form-group">
+                            <label for="name_event">Event Name:</label>
+                            <input type="text" class="form-control" id="name_event" name="name_event" [(ngModel)]="event.name_event" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="type_event">Type:</label>
+                            <input type="text" class="form-control" id="type_event" name="type_event" [(ngModel)]="event.type_event" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="price_event">Price:</label>
+                            <input type="text" class="form-control" id="price_event" name="price_event" [(ngModel)]="event.price_event" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="place_event">Place:</label>
+                            <input type="text" class="form-control" id="place_event" name="place_event" [(ngModel)]="event.place_event" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date_event">Date:</label>
+                            <input type="date" class="form-control" id="date_event" name="date_event" [(ngModel)]="event.date_event" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description_event">Description:</label>
+                            <textarea class="form-control" id="description_event" name="description_event" [(ngModel)]="event.description_event" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+
+                    <div class="container mt-5">
+                        <button class="btn btn-outline-secondary" (click)="toggleUpdateForm()">Update</button>
+                        <h2 *ngIf="showUpdateForm">Update Event</h2>
+                        <form #updateForm="ngForm" *ngIf="showUpdateForm" (ngSubmit)="updateEvent(event.id_event,updateForm.value)">
+                            <input type="hidden" name="id_event" [(ngModel)]="event.id_event">
+                            <div class="form-group">
+                                <label for="name_event">Event Name:</label>
+                                <input type="text" class="form-control" id="name_event1" name="name_event" [(ngModel)]="event.name_event" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="type_event">Type:</label>
+                                <input type="text" class="form-control" id="type_event1" name="type_event" [(ngModel)]="event.type_event" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="price_event">Price:</label>
+                                <input type="text" class="form-control" id="price_event1" name="price_event" [(ngModel)]="event.price_event" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="place_event">Place:</label>
+                                <input type="text" class="form-control" id="place_event1" name="place_event" [(ngModel)]="event.place_event" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="date_event">Date:</label>
+                                <input type="date" class="form-control" id="date_event1" name="date_event" [(ngModel)]="event.date_event" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="description_event">Description:</label>
+                                <textarea class="form-control" id="description_event1" name="description_event" [(ngModel)]="event.description_event" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </form>
+                    </div>
+                </div>
+
+                    <h5 class="card-subtitle text-muted">Overview of the events</h5>
+                <table class="table align-middle text-nowrap">
+                    <thead>
+                    <tr>
+                        <th class="text-dark font-medium fs-4">User</th>
+
+
+                        <th class="text-dark font-medium fs-4">ID</th>
+                        <th class="text-dark font-medium fs-4">Name</th>
+                        <th class="text-dark font-medium fs-4">Event Type</th>
+                        <th class="text-dark font-medium fs-4">Price</th>
+                        <th class="text-dark font-medium fs-4">Place</th>
+                        <th class="text-dark font-medium fs-4">Date</th>
+                        <th class="text-dark font-medium fs-4">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <ng-container *ngFor="let event of events">
+
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center" *ngIf="event.user">
+                                        <div class="d-flex align-items-center">
+                                            <img [src]="event.user" alt="user" width="45" class="rounded-circle">
+                                            <div class="ms-3">
+                                                <h5 class="mb-0 font-medium" style="color: black;">{{event.user.firstname}} {{event.user.lastname}}</h5>
+                                                <span class="text-muted">{{event.user.email}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+
+                            <td class="fs-4" style="color: black;" >{{event.id_event}}</td>
+                            <td>
+                                <h5 class="fs-4" style="color: black;">{{event.name_event}}</h5>
+                            </td>
+                        <td>
+                            <h5 class="mb-0 fw-normal" style="color: black;" *ngIf="event.type_event=='ouvert'">ouvert</h5>
+                            <h5 class="mb-0 fw-normal" style="color: black;" *ngIf="event.type_event=='ferme'">ferme</h5>
+                        </td>
+                            <td>
+                                <h5 class="fs-4" style="color: black;">{{event.price_event}}</h5>
+                            </td>
+
+                        <td>
+                            <h5 class="fs-4" style="color: black;">{{event.place_event}}</h5>
+                        </td>
+                        <td>
+                            <h5 class="fs-4" style="color: black;">{{event.date_event}}</h5>
+                        </td>
+                        <td>
+                            <h5 class="fs-4" style="color: black;">{{event.description_event}}</h5>
+                        </td>
+                                <td>
+
+                            <button class="btn btn-outline-secondary" (click)="assignEventToUser(event.id_event)" >Assign Event to user</button>
+
+
+
+
+                            <button class="btn btn-outline-secondary" (click)="deleteevent(event.id_event)" >Delete</button>
+                                    <button class="btn btn-outline-secondary" (click)="updateEvent(event.id_event,event)" >Select Event To update</button>
+                                </td>
+
+
+
+                    </ng-container>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {createComponent, NgModule} from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
@@ -14,6 +14,13 @@ import { BookConsultationComponent } from './front/examples/book-consultation/bo
 import { bookConsultationComponent } from './front/examples/profileConsultant copy/bookConsultation';
 import { DashboardComponent } from './back/dashboard/dashboard.component';
 import { FullComponent } from './back/layouts/full/full.component';
+import { CreditComponent } from './back/component/credit/credit.component';
+import {ClientCreditDemandComponent} from "./front/examples/client-credit-demand/client-credit-demand.component";
+import {CreditDemandService} from "./front/service/credit-demand.service";
+import {CreditDemandComponent} from "./back/component/credit-demand/credit-demand.component";
+import {EventComponent} from "./back/component/event/event.component";
+import {ButtonsComponent} from "./back/component/buttons/buttons.component";
+import {EventClientComponent} from "./front/examples/event-client/event-client.component";
 
 const routes: Routes =[
     { path: 'index',                component: ComponentsComponent },
@@ -25,7 +32,20 @@ const routes: Routes =[
     { path: 'examples/profileConsultant',component: ProfileConsultantComponent},
     { path: 'examples/bookConsultation',component: BookConsultationComponent},
     { path: 'examples/book',component: bookConsultationComponent},
-      {
+    { path: 'credit',component:CreditComponent},
+    { path: 'examples/client-credit-demand',component: ClientCreditDemandComponent},
+    { path: 'creditDemand',component:CreditDemandComponent},
+    { path: 'event',component:EventComponent},
+    { path: 'ButtonsComponent',component:ButtonsComponent},
+    {path: 'dashboard', component: DashboardComponent},
+    {path: 'FullComponent', component : FullComponent},
+    {path: 'EventClientComponent', component : EventClientComponent},
+
+
+
+
+
+    {
     path: '',
     component: FullComponent,
     children: [

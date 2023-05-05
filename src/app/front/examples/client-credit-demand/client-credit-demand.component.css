@@ -1,0 +1,42 @@
+
+
+
+.card{
+    background-color: lavender;
+}
+
+/* Set default styles for all input elements */
+input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #491217;
+}
+
+
+
+
+
+/* Style specific input types */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: 100%;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    background-color: #0069d9;
+    border-color: #0062cc;
+    outline: none;
+}

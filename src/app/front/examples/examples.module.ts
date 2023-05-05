@@ -13,6 +13,9 @@ import { ExamplesComponent } from './examples.component';
 import { ProfileConsultantComponent } from './profileConsultant/profileConsultant.component';
 import { BookConsultationComponent } from './book-consultation/book-consultation.component';
 import { bookConsultationComponent } from './profileConsultant copy/bookConsultation';
+import { ClientCreditDemandComponent } from './client-credit-demand/client-credit-demand.component';
+import { CreditAfterPageComponent } from './credit-after-page/credit-after-page.component';
+import { EventClientComponent } from './event-client/event-client.component';
 
 
 @NgModule({
@@ -33,7 +36,10 @@ import { bookConsultationComponent } from './profileConsultant copy/bookConsulta
         ProfileComponent,
         ProfileConsultantComponent,
         BookConsultationComponent,
-        bookConsultationComponent
+        bookConsultationComponent,
+        ClientCreditDemandComponent,
+        CreditAfterPageComponent,
+        EventClientComponent
         
     ]
 })

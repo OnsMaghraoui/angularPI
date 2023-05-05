@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var TypeEvent = /*#__PURE__*/(() => {\n  (function (TypeEvent) {\n    TypeEvent[\"ouvert\"] = \"ouvert\";\n    TypeEvent[\"ferme\"] = \"ferme\";\n  })(TypeEvent || (TypeEvent = {}));\n  return TypeEvent;\n})();","map":null,"metadata":{},"sourceType":"module"}

@@ -72,13 +72,14 @@
                     <tr>
                     <button class="btn btn-outline-success" (click)="assignConsultToUser(consultation.id_cons)" *ngIf="consultation.status_cons === false">Assign Consultation</button>
                     <button class="btn btn-outline-danger" (click)="deleteConsultation(consultation.id_cons)" *ngIf="consultation.status_cons === false">Reject Consultation</button>
+
                     </tr>
                     <button class="btn btn-outline-secondary" (click)="cancelConsultation(consultation.id_cons)" *ngIf="consultation.status_cons === true">Cancel Consultation</button>
-                    </td>
-                  </tr>    
+
                 </ng-container>
               </tbody>
           </table>
       </div>
       </div>
     </div> 
+</div>
